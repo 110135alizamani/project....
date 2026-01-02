@@ -1,0 +1,44 @@
+form {
+  background-color: var(--md-sys-color-surface-container-high); /* رنگ پس‌زمینه فرم از تم متریال */
+  border: 1px solid var(--md-sys-color-outline-variant);        /* کادر دور فرم با رنگ ملایم */
+  border-radius: var(--md-sys-shape-corner-large-default-size); /* گوشه‌های گرد بزرگ */
+  padding: 2rem;                                                /* فاصله داخلی فرم از اطراف */
+  max-width: 500px;                                             /* حداکثر عرض فرم */
+  margin: 0 auto;                                               /* وسط‌چین کردن فرم در صفحه */
+  box-shadow: 0 2px 8px var(--md-sys-color-shadow);             /* سایه برای برجسته شدن فرم */
+  display: flex;                                                /* استفاده از فلکس‌باکس برای چیدمان داخلی */
+  flex-direction: column;                                       /* چیدمان عمودی فیلدها */
+  gap: 1.5rem;                                                  /* فاصله بین فیلدهای فرم */
+}
+
+label {
+  font-family: var(--md-sys-typescale-label-large-font);        /* فونت لیبل از سیستم تایپ */
+  font-weight: var(--md-sys-typescale-label-large-weight);      /* وزن فونت لیبل */
+  font-size: var(--md-sys-typescale-label-large-size);          /* اندازه فونت لیبل */
+  color: var(--md-sys-color-on-surface);                        /* رنگ متن لیبل */
+}
+
+input,
+textarea,
+select {
+  padding: 0.75rem;                                             /* فاصله داخلی فیلدها */
+  border: 1px solid var(--md-sys-color-outline);                /* کادر دور فیلدها */
+  border-radius: var(--md-sys-shape-corner-small-default-size); /* گوشه‌های گرد کوچک */
+  background-color: var(--md-sys-color-surface-container);      /* رنگ پس‌زمینه فیلدها */
+  color: var(--md-sys-color-on-surface);                        /* رنگ متن داخل فیلد */
+  font-size: var(--md-sys-typescale-body-medium-size);          /* اندازه فونت فیلدها */
+  font-family: var(--md-sys-typescale-body-medium-font);        /* فونت فیلدها */
+  font-weight: var(--md-sys-typescale-body-medium-weight);      /* وزن فونت فیلدها */
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--md-sys-color-primary);               /* خط دور فیلد در حالت فوکوس */
+}
+
+.form-group {
+  display: flex;                                                /* استفاده از فلکس برای چیدمان لیبل و فیلد */
+  flex-direction: column;                                       /* چیدمان عمودی لیبل و فیلد */
+  gap: 0.5rem;                                                  /* فاصله بین لیبل و فیلد */
+}

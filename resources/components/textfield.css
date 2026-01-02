@@ -1,0 +1,63 @@
+/* 🎯 تکست‌فیلد حالت Outlined با استفاده کامل از توکن‌های رنگ، تایپ و شکل */
+
+/* ظرف تکست‌فیلد */
+.textfield { /* کانتینر کامپوننت */
+    display: flex; /* چیدمان فلکسی */
+    flex-direction: column; /* لیبل بالا، ورودی پایین */
+    gap: 0.25rem; /* فاصله کوچک بین لیبل و ورودی */
+  }
+  
+  /* لیبل تکست‌فیلد */
+  .textfield label { /* استایل لیبل */
+    font-family: var(--md-sys-typescale-label-large-font); /* خانواده فونت لیبل بزرگ */
+    font-size: var(--md-sys-typescale-label-large-size); /* اندازه فونت لیبل بزرگ */
+    font-weight: var(--md-sys-typescale-label-large-weight); /* وزن فونت لیبل بزرگ */
+    line-height: var(--md-sys-typescale-label-large-line-height); /* فاصله خطوط لیبل */
+    color: var(--md-sys-color-on-surface); /* رنگ متن لیبل روی سطح */
+  }
+  
+  /* ورودی‌های متنی (input/textarea) حالت outlined */
+  .textfield input, /* اعمال روی input داخل تکست‌فیلد */
+  .textfield textarea { /* اعمال روی textarea داخل تکست‌فیلد */
+    padding: calc(var(--md-sys-typescale-body-medium-line-height) / 2); /* فاصله داخلی متناسب با تایپ‌اسکیل */
+    border: 1px solid var(--md-sys-color-outline); /* کادر بیرونی با رنگ outline */
+    border-radius: var(--md-sys-shape-corner-small-default-size); /* گوشه‌های گرد کوچک */
+    background-color: var(--md-sys-color-surface); /* زمینه سطح خنثی */
+    color: var(--md-sys-color-on-surface); /* رنگ متن داخل ورودی */
+    font-family: var(--md-sys-typescale-body-medium-font); /* خانواده فونت بدنه متوسط */
+    font-size: var(--md-sys-typescale-body-medium-size); /* اندازه فونت بدنه متوسط */
+    font-weight: var(--md-sys-typescale-body-medium-weight); /* وزن فونت بدنه متوسط */
+    line-height: var(--md-sys-typescale-body-medium-line-height); /* فاصله خطوط متن */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease; /* انیمیشن‌های حالت‌ها */
+  }
+  
+  /* هاور ورودی */
+  .textfield input:hover,
+  .textfield textarea:hover {
+    border-color: var(--md-sys-color-primary); /* تاکید کادر با رنگ اصلی */
+  }
+  
+  /* فوکوس ورودی */
+  .textfield input:focus,
+  .textfield textarea:focus {
+    outline: none; /* حذف outline پیش‌فرض */
+    border-color: var(--md-sys-color-primary); /* رنگ کادر در فوکوس */
+    box-shadow: 0 0 0 2px var(--md-sys-color-primary); /* حلقه فوکوس مطابق MD3 */
+    background-color: var(--md-sys-color-surface-container-low); /* زمینه کمی پررنگ‌تر برای تمایز */
+  }
+  
+  /* فشرده (pressed) — بازخورد بسیار ملایم */
+  .textfield input:active,
+  .textfield textarea:active {
+    transform: scale(0.999); /* حس فشار جزئی بدون جلب توجه */
+  }
+  
+  /* غیرفعال */
+  .textfield input:disabled,
+  .textfield textarea:disabled {
+    background-color: var(--md-sys-color-surface-variant); /* زمینه خنثی‌تر در غیرفعال */
+    color: var(--md-sys-color-on-surface); /* متن خنثی */
+    opacity: 0.6; /* کاهش شفافیت برای تمایز */
+    cursor: not-allowed; /* غیرمجاز */
+  }
+  

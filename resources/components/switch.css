@@ -1,0 +1,136 @@
+/* ===========================
+   Switch Component (MD3)
+   فایل اختصاصی کامپوننت سوییچ
+   وابسته به: main.css, light-mc.css, shape.css, type-system.css
+   =========================== */
+
+/* 🧱 ریشه کامپوننت: کلاس switch
+   - این لیبل نقش کانتینر سوییچ را دارد
+   - نمایش inline-flex برای چینش افقی و هم‌تراز کردن thumb و track */
+   .switch {
+    position: relative; /* برای موقعیت‌دهی مطلق thumb نسبت به کانتینر */
+    display: inline-flex; /* چینش افقی عناصر داخلی */
+    align-items: center; /* هم‌تراز کردن عمودی عناصر داخلی */
+    gap: 8px; /* فاصله بین سوییچ و لیبل متنی احتمالی */
+    cursor: pointer; /* نشانگر دست برای تعامل */
+    user-select: none; /* جلوگیری از انتخاب متن هنگام کلیک */
+  }
+  
+  /* 🔒 ورودی اصلی: چک‌باکس
+     - از نظر فنی سوییچ همان checkbox است
+     - این ورودی را مخفی می‌کنیم و ظاهر سفارشی می‌سازیم */
+  .switch-input {
+    position: absolute; /* خارج از جریان معمول */
+    opacity: 0; /* مخفی کردن */
+    pointer-events: none; /* جلوگیری از تعامل مستقیم */
+  }
+  
+  /* 🛤️ Track (مسیر سوییچ)
+     - پس‌زمینه و شکل کلی سوییچ
+     - از توکن‌های رنگ و گردی گوشه‌ها استفاده می‌کنیم */
+  .switch-track {
+    width: 40px; /* عرض مسیر */
+    height: 20px; /* ارتفاع مسیر */
+    background-color: var(--md-sys-color-surface-variant); /* رنگ مسیر در حالت خاموش */
+    border-radius: var(--md-sys-shape-large); /* گردی گوشه‌ها مطابق MD3 */
+    transition: background-color 160ms ease; /* انیمیشن نرم تغییر رنگ */
+    position: relative; /* برای قرارگیری thumb داخل آن */
+    box-shadow: 0 0 0 0 transparent; /* پایه برای فوکوس */
+  }
+  
+  /* 🟢 Track در حالت روشن (checked)
+     - وقتی ورودی چک شد، رنگ مسیر تغییر می‌کند */
+  .switch-input:checked + .switch-track {
+    background-color: var(--md-sys-color-primary); /* رنگ مسیر در حالت روشن */
+  }
+  
+  /* 🟣 Track در حالت disabled
+     - وقتی ورودی غیرفعال باشد، مسیر کم‌رنگ‌تر می‌شود */
+  .switch-input:disabled + .switch-track {
+    background-color: var(--md-sys-color-surface-container-highest); /* رنگ خنثی‌تر */
+    cursor: not-allowed; /* نشانگر عدم امکان تعامل */
+    opacity: 0.7; /* کمی کمرنگ برای انتقال حس غیرفعال */
+  }
+  
+  /* 🖱️ Track در حالت hover (فقط وقتی غیرفعال نیست)
+     - تغییر رنگ ملایم برای بازخورد بصری */
+  .switch:not(.disabled):hover .switch-track {
+    background-color: var(--md-sys-color-primary-fixed); /* رنگ ثابت اولیه */
+  }
+  
+  /* ⌨️ Track در حالت focus
+     - حلقه فوکوس برای دسترس‌پذیری */
+  .switch-input:focus + .switch-track {
+    box-shadow: 0 0 0 2px var(--md-sys-color-tertiary); /* حلقه فوکوس */
+  }
+  
+  /* 👆 Track در حالت pressed (فعال شدن کلیک)
+     - تغییر رنگ کوتاه هنگام فشار */
+  .switch:active .switch-track {
+    background-color: var(--md-sys-color-primary-fixed-dim); /* رنگ کمی تیره‌تر */
+  }
+  
+  /* 🟡 Thumb (دکمه گرد سوییچ)
+     - عنصر قابل حرکت روی مسیر
+     - از توکن‌های رنگ و گردی کامل استفاده می‌کنیم */
+  .switch-thumb {
+    position: absolute; /* موقعیت‌دهی داخل کانتینر */
+    top: 2px; /* فاصله از بالا */
+    left: 2px; /* فاصله از راست/چپ (RTL اهمیتی ندارد چون absolute است) */
+    width: 16px; /* قطر دکمه */
+    height: 16px; /* قطر دکمه */
+    background-color: var(--md-sys-color-outline); /* رنگ دکمه در حالت خاموش */
+    border-radius: var(--md-sys-shape-corner-full-default-size); /* گردی کامل */
+    transition: left 160ms ease, background-color 160ms ease, box-shadow 160ms ease; /* انیمیشن حرکت و رنگ */
+    box-shadow: 0 1px 2px var(--md-sys-color-shadow); /* سایه ملایم */
+  }
+  
+  /* ✅ Thumb در حالت روشن (checked)
+     - دکمه به سمت راست حرکت می‌کند و رنگش روشن می‌شود */
+  .switch-input:checked ~ .switch-thumb {
+    left: 22px; /* انتقال به سمت راست مسیر */
+    background-color: var(--md-sys-color-on-primary); /* رنگ روشن برای کنتراست */
+  }
+  
+  /* ❌ Thumb در حالت disabled
+     - رنگ دکمه خنثی‌تر می‌شود */
+  .switch-input:disabled ~ .switch-thumb {
+    background-color: var(--md-sys-color-outline-variant); /* رنگ خنثی */
+    box-shadow: none; /* حذف سایه برای حس غیرفعال */
+  }
+  
+  /* 🖱️ Thumb در حالت hover (وقتی غیرفعال نیست)
+     - کمی برجسته‌تر می‌شود */
+  .switch:not(.disabled):hover .switch-thumb {
+    box-shadow: 0 2px 4px var(--md-sys-color-shadow); /* سایه بیشتر */
+  }
+  
+  /* ⌨️ Thumb در حالت focus
+     - حلقه فوکوس برای دسترس‌پذیری */
+  .switch-input:focus ~ .switch-thumb {
+    box-shadow: 0 0 0 2px var(--md-sys-color-tertiary); /* حلقه فوکوس */
+  }
+  
+  /* 👆 Thumb در حالت pressed
+     - تغییر رنگ کوتاه هنگام فشار */
+  .switch:active .switch-thumb {
+    background-color: var(--md-sys-color-tertiary-fixed); /* رنگ متفاوت هنگام فشار */
+  }
+  
+  /* 🏷️ لیبل متنی کنار سوییچ (اختیاری)
+     - برای نمایش عنوان تنظیم */
+  .switch-label {
+    font-family: var(--md-sys-typescale-body-medium-font); /* فونت بدنه */
+    font-size: var(--md-sys-typescale-body-medium-size); /* سایز بدنه */
+    font-weight: var(--md-sys-typescale-body-medium-weight); /* وزن بدنه */
+    line-height: var(--md-sys-typescale-body-medium-line-height); /* فاصله خطوط */
+    color: var(--md-sys-color-on-surface); /* رنگ متن */
+  }
+  
+  /* ♿ دسترس‌پذیری: کلاس کمکی برای سوییچ غیرفعال
+     - اگر بخواهیم کل کانتینر را غیرفعال کنیم */
+  .switch.disabled {
+    cursor: not-allowed; /* نشانگر عدم امکان تعامل */
+    opacity: 0.7; /* کمرنگ‌تر */
+  }
+  

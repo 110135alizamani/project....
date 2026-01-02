@@ -1,0 +1,44 @@
+/* 🎯 پایه Badge */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--md-sys-shape-corner-full-default-size); /* گرد کامل */
+    background-color: var(--md-sys-color-error);                 /* رنگ هشدار طبق MD3 */
+    color: var(--md-sys-color-on-error);                         /* متن روی رنگ هشدار */
+    font-family: var(--md-sys-typescale-label-small-font);        /* فونت Label Small */
+    font-weight: var(--md-sys-typescale-label-small-weight);
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    box-shadow: 0 2px 4px var(--md-sys-color-shadow);             /* سایه سبک برای برجستگی */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* 🔹 Badge کوچک (وقتی فقط وقوع اتفاق مهم است) */
+  .badge-sm {
+    min-width: 16px;
+    height: 16px;
+    font-size: var(--md-sys-typescale-label-small-size);
+    line-height: var(--md-sys-typescale-label-small-line-height);
+    padding: 0 4px;
+  }
+  
+  /* 🔹 Badge بزرگ (وقتی تعداد اهمیت دارد) */
+  .badge-lg {
+    min-width: 24px;
+    height: 24px;
+    font-size: var(--md-sys-typescale-label-large-size);
+    font-family: var(--md-sys-typescale-label-large-font);
+    font-weight: var(--md-sys-typescale-label-large-weight);
+    line-height: var(--md-sys-typescale-label-large-line-height);
+    padding: 0 6px;
+  }
+  
+  /* 📦 موقعیت‌دهی آیکن سبد خرید */
+  .cart-icon {
+    position: relative;
+    font-size: 32px;
+    cursor: pointer;
+  }
+  

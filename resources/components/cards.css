@@ -1,0 +1,129 @@
+/* 🎯 پایه مشترک کارت */
+.card {
+  border-radius: var(--md-sys-shape-corner-medium-default-size); /* گوشه‌های گرد متوسط */
+  padding: 16px;                                /* فاصله داخلی استاندارد برای محتوا */
+  font-family: var(--md-sys-typescale-body-medium-font); /* خانواده فونت طبق تایپوگرافی MD3 */
+  font-size: var(--md-sys-typescale-body-medium-size);   /* اندازه فونت متن کارت */
+  font-weight: var(--md-sys-typescale-body-medium-weight);/* وزن فونت متن کارت */
+  line-height: var(--md-sys-typescale-body-medium-line-height);/* فاصله خطوط متن کارت */
+}
+
+/* 🟦 Filled Card */
+.card-filled {
+  background-color: var(--md-sys-color-surface-container); /* پس‌زمینه پر طبق رنگ سطح MD3 */
+  color: var(--md-sys-color-on-surface);                   /* رنگ متن روی سطح */
+  border: none;                                            /* بدون کادر */
+  box-shadow: none;                                        /* بدون سایه */
+}
+
+/* ⚪ Outlined Card */
+.card-outlined {
+  background-color: transparent;                           /* پس‌زمینه شفاف */
+  color: var(--md-sys-color-on-surface);                   /* رنگ متن روی سطح */
+  border: 1px solid var(--md-sys-color-outline);           /* کادر مشخص طبق رنگ outline */
+  box-shadow: none;                                        /* بدون سایه */
+}
+
+/* 🟣 Elevated Card */
+.card-elevated {
+  background-color: var(--md-sys-color-surface);           /* پس‌زمینه سطح اصلی */
+  color: var(--md-sys-color-on-surface);                   /* رنگ متن روی سطح */
+  border: none;                                            /* بدون کادر */
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.3),                 /* سایه کوچک و نزدیک */
+              0px 1px 3px rgba(0,0,0,0.15);                /* سایه نرم‌تر برای عمق */
+}
+
+/* 🔹 چینش کارت‌های فعالیت‌های اخیر */
+.activities-grid {
+  display: grid;                                           /* استفاده از Grid برای چینش منظم */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* ستون‌ها به صورت خودکار با حداقل 240px */
+  gap: 1rem;                                               /* فاصله بین کارت‌ها */
+}
+
+/* 🔹 چینش دکمه‌ها در بخش CTA */
+.cta-buttons {
+  display: flex;                                           /* دکمه‌ها کنار هم قرار می‌گیرند */
+  gap: 1rem;                                               /* فاصله بین دکمه‌ها */
+  flex-wrap: wrap;                                         /* در موبایل دکمه‌ها می‌رن زیر هم */
+  justify-content: flex-start;                             /* چینش از سمت راست (چون RTL هست) */
+}
+
+/* ✅ حالت Enabled (پیش‌فرض همه کارت‌ها)*/
+
+/* 🖱️ Hover (وقتی ماوس روی کارت می‌رود) */
+.card:hover {
+  box-shadow: 0 4px 12px var(--md-sys-color-shadow);              /* سایه بیشتر برای بازخورد هاور */
+  transition: none;                               
+}
+
+/* 🎯 Focus (وقتی کارت فوکوس می‌گیرد) */
+.card:focus {
+  outline: 1px solid var(--md-sys-color-primary);                 /* خط فوکوس باریک با رنگ اصلی */
+  outline-offset: 2px;                                            /* فاصله خط فوکوس از لبه کارت */
+}
+
+/* 👇 Pressed (active – وقتی کارت کلیک/فشار داده می‌شود) */
+.card:active {
+  transform: none;                                         /* کمی کوچک‌تر شدن برای حس فشار */
+}
+
+/* 🚫 Disabled (وقتی کارت غیرفعال است) */
+.card:disabled {
+  pointer-events: none;                                           /* غیرقابل تعامل شدن کارت */
+  opacity: 0.38;                                                  /* کمرنگ شدن مطابق الگوی MD3 */
+  box-shadow: none;                                               /* حذف هر گونه سایه */
+  outline: none;                                                  /* حذف فوکوس در حالت غیرفعال */
+  transform: none;                                                /* بدون حرکت/کوچک‌شدن */
+}
+
+/* 🟦 Filled — حالت‌ها */
+.card-filled:hover {
+  box-shadow: 0 6px 16px var(--md-sys-color-shadow);              /* هاور: سایه برجسته‌تر برای سطح پر */
+}
+.card-filled:focus {
+  outline: 2px solid var(--md-sys-color-primary);                 /* فوکوس: تاکید بیشتر با ضخامت 2px */
+  outline-offset: 3px;                                            /* فاصله‌ی حلقه فوکوس کمی بیشتر */
+}
+.card-filled:active {
+  transform: none;                                        /* active: فشار ملایم‌تر نسبت به پایه */         
+}
+.card-filled:disabled {
+  background-color: var(--md-sys-color-surface-variant);          /* پس‌زمینه خنثی‌تر در غیرفعال */
+  color: var(--md-sys-color-on-surface);                          /* متن خنثی مطابق سطح */
+}
+
+/* ⚪ Outlined — حالت‌ها */
+.card-outlined:hover {
+  background-color: var(--md-sys-color-surface-container-low);    /* هاور: لایه سطحی کم برای اشاره */
+  border-color: var(--md-sys-color-outline-variant);              /* نرم‌تر شدن کادر در هاور */
+}
+.card-outlined:focus {
+  outline: 2px solid var(--md-sys-color-primary);                 /* فوکوس: حلقه واضح روی کادر */
+  outline-offset: 3px;                                            /* فاصله مناسب از لبه */
+}
+.card-outlined:active {
+  transform: none;                                        /* active: فشار ملایم */
+}
+.card-outlined:disabled {
+  border-color: var(--md-sys-color-outline-variant);              /* کادر کمرنگ‌تر در غیرفعال */
+  color: var(--md-sys-color-on-surface);                          /* متن خنثی */
+}
+
+/* 🟣 Elevated — حالت‌ها */
+.card-elevated:hover {
+  box-shadow: 0 6px 18px var(--md-sys-color-shadow);              /* هاور: افزایش elevation برای شناوری */
+  background-color: var(--md-sys-color-surface-container);        /* سطح کمی پررنگ‌تر برای حس تعامل */
+}
+.card-elevated:focus {
+  outline: 2px solid var(--md-sys-color-primary);                 /* فوکوس: حلقه واضح با رنگ اصلی */
+  outline-offset: 3px;                                            /* فاصله حلقه از لبه کارت */
+}
+.card-elevated:active {
+  transform: none;                                        /* active: فشار ملایم */
+}
+.card-elevated:disabled {
+  box-shadow: none;                                               /* حذف elevation در غیرفعال */
+  background-color: var(--md-sys-color-surface-variant);          /* سطح خنثی‌تر */
+  color: var(--md-sys-color-on-surface);                          /* متن خنثی */
+}
+

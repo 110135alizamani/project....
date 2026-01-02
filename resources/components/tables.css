@@ -1,0 +1,42 @@
+/* استایل کلی جدول */
+.md-table {
+  width: 100%; /* جدول کل عرض صفحه را بگیرد */
+  border-collapse: collapse; /* خطوط جدول به هم بچسبند */
+  background-color: var(--md-sys-color-surface); /* رنگ پس‌زمینه مطابق متریال */
+  color: var(--md-sys-color-on-surface); /* رنگ متن جدول */
+  font-family: "Vazirmatn", sans-serif; /* فونت فارسی */
+  border-radius: var(--md-sys-shape-corner-medium-default-size); /* گوشه‌های گرد متوسط */
+  overflow: hidden; /* جلوگیری از بیرون‌زدن محتوا */
+  box-shadow: 0 2px 8px var(--md-sys-color-shadow); /* سایه ملایم */
+}
+
+/* استایل سرستون‌ها */
+.md-table th {
+  background-color: var(--md-sys-color-primary-container); /* رنگ پس‌زمینه سرستون */
+  color: var(--md-sys-color-on-primary-container); /* رنگ متن سرستون */
+  text-align: right; /* متن راست‌چین */
+  padding: 1rem; /* فاصله داخلی */
+  font-weight: bold; /* ضخیم‌تر شدن فونت */
+  font-size: 1rem; /* اندازه فونت */
+}
+
+/* استایل سلول‌های جدول */
+.md-table td {
+  padding: 0.75rem 1rem; /* فاصله داخلی سلول‌ها */
+  border-bottom: 1px solid var(--md-sys-color-outline-variant); /* خط جداکننده بین ردیف‌ها */
+}
+
+/* افکت هاور روی ردیف‌ها */
+.md-table tr:hover {
+  background-color: var(--md-sys-color-surface-container-high); /* تغییر رنگ پس‌زمینه هنگام هاور */
+  transition: background-color 0.3s ease; /* انیمیشن نرم */
+}
+
+/* استایل تصاویر بندانگشتی */
+.thumbnail {
+  width: 48px; /* عرض تصویر */
+  height: 48px; /* ارتفاع تصویر */
+  border-radius: var(--md-sys-shape-corner-small-default-size); /* گوشه‌های گرد کوچک */
+  object-fit: cover; /* تصویر داخل قاب بدون کشیدگی */
+  box-shadow: 0 2px 4px var(--md-sys-color-shadow); /* سایه سبک زیر تصویر */
+}

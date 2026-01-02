@@ -1,0 +1,98 @@
+/* 🎯 چک‌باکس سفارشی با MD3 */
+
+/* خود ورودی */
+.checkbox {
+    appearance: none; /* ظاهر پیش‌فرض مرورگر برای چک‌باکس حذف می‌شود */
+    display: inline-block; /* به‌صورت بلوک درون‌خطی نمایش داده شود تا کنار متن قرار گیرد */
+    width: 20px; /* عرض مربع چک‌باکس */
+    height: 20px; /* ارتفاع مربع چک‌باکس */
+    border: 2px solid var(--md-sys-color-outline); /* کادر بیرونی با رنگ outline از توکن‌ها */
+    border-radius: var(--md-sys-shape-corner-small-default-size); /* گوشه‌های گرد کوچک طبق توکن‌ها */
+    background-color: var(--md-sys-color-surface); /* رنگ زمینه سطح خنثی */
+    vertical-align: middle; /* هم‌تراز شدن با متن در خط */
+    cursor: pointer; /* نشانگر موس به حالت کلیک‌پذیر تغییر کند */
+    position: relative; /* برای جایگذاری نماد تیک با ::after */
+    transition: border-color 0.2s ease, background-color 0.2s ease; /* انیمیشن نرم برای تغییر رنگ کادر و زمینه */
+}
+
+/* حالت هاور */
+.checkbox:hover {
+    border-color: var(--md-sys-color-primary); /* وقتی موس روی چک‌باکس است، رنگ کادر به رنگ اصلی تغییر کند */
+}
+
+/* فوکوس */
+.checkbox:focus-visible {
+    outline: 2px solid var(--md-sys-color-primary); /* حلقه فوکوس رنگی اطراف چک‌باکس */
+    outline-offset: 2px; /* فاصله حلقه فوکوس از کادر */
+}
+
+/* حالت انتخاب‌شده */
+.checkbox:checked {
+    background-color: var(--md-sys-color-primary); /* زمینه پر با رنگ اصلی */
+    border-color: var(--md-sys-color-primary); /* کادر هم‌رنگ زمینه شود */
+}
+
+/* تیک داخل مربع */
+.checkbox:checked::after {
+    content: "✔"; /* نماد تیک نمایش داده شود */
+    color: var(--md-sys-color-on-primary); /* رنگ تیک متضاد با رنگ زمینه اصلی */
+    font-size: 14px; /* اندازه نماد تیک */
+    position: absolute; /* جایگذاری مطلق داخل مربع */
+    top: 50%; /* مرکز عمودی */
+    left: 50%; /* مرکز افقی */
+    transform: translate(-50%, -55%); /* جابجایی برای قرار گرفتن دقیق در مرکز */
+}
+
+/* حالت غیرفعال */
+.checkbox:disabled {
+    opacity: 0.38; /* کاهش شفافیت مطابق الگوی MD3 */
+    cursor: not-allowed; /* نشانگر موس به حالت غیرمجاز تغییر کند */
+}
+
+/* --- Radio Button --- */
+.radio {
+    appearance: none; /* ظاهر پیش‌فرض رادیو حذف شود */
+    width: var(--md-sys-typescale-label-large-line-height); /* اندازه دایره بر اساس تایپ‌اسکیل */
+    height: var(--md-sys-typescale-label-large-line-height); /* ارتفاع هم‌ارز */
+    border: 2px solid var(--md-sys-color-outline); /* کادر بیرونی با رنگ outline */
+    border-radius: var(--md-sys-shape-corner-full-default-size); /* کاملاً گرد شود */
+    background-color: var(--md-sys-color-surface); /* زمینه سطح خنثی */
+    cursor: pointer; /* کلیک‌پذیر */
+    position: relative; /* برای نقطه داخلی با ::after */
+    box-sizing: border-box; /* محاسبه اندازه شامل کادر */
+    vertical-align: middle; /* هم‌تراز با متن */
+    transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.1s ease, outline-color 0.2s ease; /* انیمیشن حالت‌ها */
+}
+
+.radio:hover {
+    border-color: var(--md-sys-color-primary); /* در حالت هاور رنگ کادر تغییر کند */
+}
+
+.radio:focus-visible {
+    outline: 2px solid var(--md-sys-color-primary); /* حلقه فوکوس رنگی */
+    outline-offset: 2px; /* فاصله حلقه فوکوس از کادر */
+}
+
+.radio:active {
+    transform: scale(0.98); /* بازخورد فشار جزئی */
+}
+
+.radio:checked {
+    border-color: var(--md-sys-color-primary); /* کادر با رنگ اصلی هماهنگ شود */
+}
+
+.radio:checked::after {
+    content: ""; /* نقطه داخلی بدون متن */
+    width: calc(var(--md-sys-typescale-label-large-line-height) / 2); /* قطر نقطه نصف قطر بیرونی */
+    height: calc(var(--md-sys-typescale-label-large-line-height) / 2); /* ارتفاع نقطه */
+    background-color: var(--md-sys-color-primary); /* رنگ نقطه داخلی با رنگ اصلی */
+    border-radius: var(--md-sys-shape-corner-full-default-size); /* کاملاً گرد شود */
+    position: absolute; /* جایگذاری مطلق داخل دایره */
+    inset: 50% auto auto 50%; /* مرکز منطقی برای RTL/LTR */
+    transform: translate(-50%, -50%); /* جابجایی برای مرکز دقیق */
+}
+
+.radio:disabled {
+    opacity: 0.38; /* کاهش شفافیت مطابق الگوی MD3 */
+    cursor: not-allowed; /* نشانگر موس غیرمجاز */
+}

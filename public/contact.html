@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" itemscope itemtype="https://schema.org/ContactPage">
+<head>
+  <link rel="stylesheet" href="../resources/assets/css/main.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="تماس با تیم معرفت برای پرسش‌ها و همکاری‌ها">
+  <meta name="robots" content="index, follow">
+  <title>تماس با معرفت | معرفت</title>
+</head>
+<body>
+
+  <header>
+    <h1 class="site-title">
+      <img src="../resources/assets/images/logo.svg" alt="لوگو معرفت"> معرفت
+    </h1>
+    <nav class="auth-nav" aria-label="ناوبری کاربری">
+      <ul>
+        <li><a href="login.html" class="btn btn-primary btn-md">ورود</a></li>
+        <li><a href="signup.html" class="btn btn-primary btn-md">ثبت‌نام</a></li>
+        <li><a href="dashboard.html">داشبورد</a></li>
+        <li><a href="logout.html">خروج</a></li>
+      </ul>
+    </nav>
+
+    <nav class="main-nav" aria-label="ناوبری اصلی سایت">
+      <ul>
+        <li><a href="about.html">درباره معرفت</a></li>
+        <li><a href="team.html">تیم ما</a></li>
+        <li><a href="services.html">خدمات معرفت</a></li>
+        <li><a href="contact.html">تماس با معرفت</a></li>
+        <li><a href="donation.html">کمک‌های خیر</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main itemprop="mainContentOfPage">
+    <!-- معرفی بخش تماس -->
+    <section>
+      <div class="card card-filled">
+        <h2>تماس با معرفت</h2>
+        <p>برای پرسش‌ها، پیشنهادها یا همکاری با تیم معرفت می‌توانید از طریق فرم زیر با ما در ارتباط باشید.</p>
+      </div>
+    </section>
+
+    <!-- فرم تماس -->
+    <section>
+      <div class="card card-filled">
+        <h2>فرم تماس</h2>
+        <form action="/contact" method="post" class="contact-form" autocomplete="off">
+          
+          <div class="textfield">
+            <label for="name">نام:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+      
+          <div class="textfield">
+            <label for="email">ایمیل:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+      
+          <div class="textfield">
+            <label for="message">پیام:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+          </div>
+      
+          <button type="submit" class="btn btn-primary btn-md">ارسال پیام</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta">
+      <div class="card card-elevated">
+        <h2>راه‌های دیگر ارتباط</h2>
+        <p>می‌توانید از طریق شبکه‌های اجتماعی یا شماره تماس درج‌شده در سایت نیز با ما در ارتباط باشید.</p>
+        <div class="cta-buttons">
+          <a href="signup.html" class="btn btn-primary btn-md">ثبت‌نام</a>
+          <a href="login.html" class="btn btn-primary btn-md">ورود</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 معرفت. تمامی حقوق محفوظ است.</p>
+  </footer>
+
+  <!-- دکمه شناور برو بالا -->
+  <a href="#" class="fab" aria-label="برو بالا">⬆</a>
+
+</body>
+</html>

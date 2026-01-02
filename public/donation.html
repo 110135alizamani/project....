@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" itemscope itemtype="https://schema.org/WebPage">
+<head>
+  <link rel="stylesheet" href="../resources/assets/css/main.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="صفحه کمک‌های خیر در سایت معرفت برای مشارکت معنوی و مالی">
+  <meta name="robots" content="index, follow">
+  <title>کمک‌های خیر | معرفت</title>
+</head>
+<body>
+
+  <header>
+    <h1 class="site-title">
+      <img src="../resources/assets/images/logo.svg" alt="لوگو معرفت"> معرفت
+    </h1>
+       
+    <nav class="auth-nav" aria-label="ناوبری کاربری">
+      <ul>
+        <li><a href="login.html" class="btn btn-primary btn-md">ورود</a></li>
+        <li><a href="signup.html" class="btn btn-primary btn-md">ثبت‌نام</a></li>
+        <li><a href="dashboard.html">داشبورد</a></li>
+        <li><a href="logout.html">خروج</a></li>
+      </ul>
+    </nav>
+
+    <nav class="main-nav" aria-label="ناوبری اصلی سایت">
+      <ul>
+        <li><a href="about.html">درباره معرفت</a></li>
+        <li><a href="team.html">تیم ما</a></li>
+        <li><a href="services.html">خدمات معرفت</a></li>
+        <li><a href="contact.html">تماس با معرفت</a></li>
+        <li><a href="donation.html">کمک‌های خیر</a></li>
+      </ul>
+    </nav>
+
+  </header>
+  
+
+  <main itemprop="mainContentOfPage">
+    <!-- دعوت به مشارکت معنوی -->
+    <section>
+      <div class="card card-filled">
+        <h2>دعوت به مشارکت معنوی</h2>
+        <p>شما می‌توانید در برگزاری مراسمات مذهبی و کمک به فقرا و سایر فعالیت‌های خیر مشارکت کنید.</p>
+      </div>
+    </section>
+
+    <!-- فرم مشارکت مالی -->
+    <section>
+      <div class="card card-filled">
+        <h2>فرم مشارکت مالی</h2>
+        <form action="/donate" method="post" class="contact-form" autocomplete="off" itemprop="potentialAction" itemscope itemtype="https://schema.org/DonateAction">
+          
+          <div class="textfield">
+            <label for="amount">مبلغ کمک (تومان):</label>
+            <input type="number" id="amount" name="amount" required min="1000" step="1000" itemprop="amount">
+          </div>
+      
+          <div class="textfield">
+            <label for="type">نوع کمک:</label>
+            <select id="type" name="type" required>
+              <option value="">انتخاب کنید</option>
+              <option value="content">کمک به برگزاری مراسمات مذهبی</option>
+              <option value="research">کمک به فقرا</option>
+              <option value="general">کمک عمومی</option>
+            </select>
+          </div>
+      
+          <div class="textfield">
+            <label for="intention">نیت یا پیام:</label>
+            <textarea id="intention" name="intention" rows="3" placeholder="مثلاً به نیت فرج امام زمان یا هدیه به حضرت زهرا سلام‌الله‌علیها..."></textarea>
+          </div>
+      
+          <div class="textfield">
+            <label for="name">نام خیر (اختیاری):</label>
+            <input type="text" id="name" name="name">
+          </div>
+      
+          <button type="submit" class="btn btn-primary btn-md" itemprop="name">پرداخت و مشارکت</button>
+        </form>
+      </div>
+    </section>
+    
+    <!-- CTA -->
+    <section id="cta">
+      <div class="card card-elevated">
+        <h2>به خانواده معرفت بپیوندید</h2>
+        <p>برای استفاده از خدمات و مشارکت در فعالیت‌ها، همین حالا ثبت‌نام کنید یا وارد شوید.</p>
+        <div class="cta-buttons">
+          <a href="signup.html" class="btn btn-primary btn-md">ثبت‌نام</a>
+          <a href="login.html" class="btn btn-primary btn-md">ورود</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 معرفت. تمامی حقوق محفوظ است.</p>
+  </footer>
+
+  <!-- دکمه شناور برو بالا -->
+  <a href="#" class="fab" aria-label="برو بالا">⬆</a>
+
+</body>
+</html>
+

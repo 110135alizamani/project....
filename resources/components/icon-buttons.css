@@ -1,0 +1,88 @@
+/* 🎯 دکمه آیکن و FAB بر پایه متریال دیزاین 3 با استفاده کامل از توکن‌ها */
+
+/* --- Icon Button (فقط آیکن عمومی) --- */
+.icon-btn { /* کلاس عمومی دکمه آیکن */
+  cursor: pointer; /* نشانگر موس کلیک‌پذیر شود */
+  display: inline-flex; /* فلکس درون‌خطی برای مرکز کردن محتوا */
+  align-items: center; /* وسط‌چین عمودی آیکن */
+  justify-content: center; /* وسط‌چین افقی آیکن */
+  width: var(--md-sys-typescale-headline-small-line-height); /* عرض بر اساس تایپ‌اسکیل */
+  height: var(--md-sys-typescale-headline-small-line-height); /* ارتفاع برابر عرض */
+  border-radius: var(--md-sys-shape-corner-full-default-size); /* گردی کامل */
+  background-color: transparent; /* زمینه شفاف */
+  color: var(--md-sys-color-primary); /* رنگ آیکن از رنگ اصلی */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* انیمیشن نرم */
+}
+
+.icon-btn:hover { /* حالت هاور */
+  background-color: var(--md-sys-color-primary-container); /* زمینه ملایم‌تر */
+  color: var(--md-sys-color-on-primary-container); /* رنگ آیکن روی کانتینر */
+}
+
+.icon-btn:focus { /* حالت فوکوس */
+  outline: none; /* حذف outline پیش‌فرض */
+}
+
+.icon-btn:active { /* حالت فشرده */
+  transform: scale(0.98); /* بازخورد فشردگی */
+}
+
+.icon-btn:disabled { /* حالت غیرفعال */
+  color: var(--md-sys-color-on-surface); /* رنگ خنثی */
+  opacity: 0.38; /* کاهش شفافیت */
+  cursor: not-allowed; /* غیرمجاز */
+}
+
+/* --- Icon Button قلب (Heart) --- */
+.icon-btn.heart { /* حالت پایه قلب توخالی */
+  font-size: 20px; /* اندازه آیکن قلب */
+  color: var(--md-sys-color-outline); /* رنگ اولیه قلب توخالی */
+  border: none; /* حذف کادر پیش‌فرض مرورگر */
+}
+
+.icon-btn.heart.liked { /* وقتی کاربر کلیک کند و قلب توپر شود */
+  color: var(--md-sys-color-error, red); /* رنگ قلب توپر (قرمز یا رنگ error) */
+  transition: color 0.3s ease; /* تغییر رنگ نرم */
+}
+
+/* --- Floating Action Button (FAB) — دکمه شناور برو به بالا --- */
+.fab { /* کلاس دکمه شناور */
+  position: fixed; /* موقعیت ثابت */
+  bottom: var(--md-sys-typescale-title-large-line-height); /* فاصله از پایین */
+  left: var(--md-sys-typescale-title-large-line-height); /* در RTL سمت چپ */
+  width: calc(var(--md-sys-typescale-display-small-size)); /* عرض */
+  height: calc(var(--md-sys-typescale-display-small-size)); /* ارتفاع */
+  border-radius: var(--md-sys-shape-corner-full-default-size); /* گردی کامل */
+  background-color: var(--md-sys-color-primary); /* زمینه اصلی */
+  color: var(--md-sys-color-on-primary); /* رنگ آیکن روی زمینه */
+  display: flex; /* فلکس برای مرکز کردن */
+  align-items: center; /* وسط‌چین عمودی */
+  justify-content: center; /* وسط‌چین افقی */
+  box-shadow: 0 4px 8px var(--md-sys-color-shadow); /* سایه متوسط */
+  cursor: pointer; /* کلیک‌پذیر */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* انیمیشن‌ها */
+  z-index: 1000; /* روی محتوا نمایش داده شود */
+}
+
+.fab:hover { /* هاور FAB */
+  background-color: var(--md-sys-color-primary-container); /* زمینه ملایم‌تر */
+  color: var(--md-sys-color-on-primary-container); /* رنگ آیکن روی کانتینر */
+  transform: translateY(-2px); /* کمی بالا بیاید */
+  box-shadow: 0 6px 12px var(--md-sys-color-shadow); /* سایه بیشتر */
+}
+
+.fab:focus { /* فوکوس FAB */
+  outline: none; /* حذف outline */
+  box-shadow: 0 0 0 3px var(--md-sys-color-primary); /* حلقه فوکوس رنگی */
+}
+
+.fab:active { /* حالت فشرده FAB */
+  transform: scale(0.98); /* بازخورد فشردگی */
+}
+
+.fab:disabled { /* حالت غیرفعال FAB */
+  background-color: var(--md-sys-color-outline-variant); /* زمینه خنثی */
+  color: var(--md-sys-color-on-surface); /* رنگ متن خنثی */
+  cursor: not-allowed; /* غیرمجاز */
+  box-shadow: none; /* بدون سایه */
+}

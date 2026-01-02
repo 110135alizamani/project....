@@ -1,0 +1,237 @@
+.btn {
+  cursor: pointer;                                         /* نشانگر موس به حالت کلیک تغییر می‌کند */
+  display: inline-flex;                                    /* نمایش به صورت فلکس در خط */
+  align-items: center;                                     /* وسط‌چین عمودی محتوا */
+  justify-content: center;                                 /* وسط‌چین افقی محتوا */
+  border-radius: var(--md-sys-shape-corner-full-default-size); /* کاملاً گرد (pill) با متغیر اختصاصی 9999px */
+  transition: background-color 0.3s ease,                  /* تغییر نرم رنگ پس‌زمینه */
+              transform 0.2s ease,                         /* تغییر نرم حرکت/مقیاس */
+              box-shadow 0.3s ease;                        /* تغییر نرم سایه */
+}
+
+
+/* 🔹 خیلی کوچک */
+.btn-xs {
+  height: 24px;                                           /* ارتفاع دکمه در سایز خیلی کوچک */
+  padding: 0 8px;                                         /* فاصله داخلی افقی کم‌تر برای تعادل بصری */
+  font-size: var(--md-sys-typescale-label-small-size);    /* اندازه فونت طبق Label Small در MD3 */
+  font-weight: var(--md-sys-typescale-label-small-weight);/* وزن فونت بر اساس Label Small */
+  font-family: var(--md-sys-typescale-label-small-font);  /* خانواده‌ی فونت بر اساس Label Small */
+}
+
+/* 🔹 کوچک */
+.btn-sm {
+  height: 28px;                                           /* ارتفاع کمی بیش‌تر از xs */
+  padding: 0 10px;                                        /* padding متناسب با ارتفاع کوچک */
+  font-size: var(--md-sys-typescale-label-small-size);    /* همان Label Small مناسب دکمه‌های کوچک */
+  font-weight: var(--md-sys-typescale-label-small-weight);
+  font-family: var(--md-sys-typescale-label-small-font);
+}
+
+/* 🔹 متوسط (پیش‌فرض) */
+.btn-md {
+  height: 32px;                                           /* ارتفاع استاندارد متوسط */
+  padding: 0 12px;                                        /* padding استاندارد برای md */
+  font-size: var(--md-sys-typescale-label-medium-size);   /* Label Medium مطابق دستورالعمل دکمه‌ها */
+  font-weight: var(--md-sys-typescale-label-medium-weight);
+  font-family: var(--md-sys-typescale-label-medium-font);
+}
+
+/* 🔹 بزرگ */
+.btn-lg {
+  height: 40px;                                           /* ارتفاع بزرگ‌تر برای خوانایی و لمس بهتر */
+  padding: 0 16px;                                        /* padding بیش‌تر برای تعادل با ارتفاع 40px */
+  font-size: var(--md-sys-typescale-label-large-size);    /* Label Large برای دکمه‌های بزرگ */
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  font-family: var(--md-sys-typescale-label-large-font);
+}
+
+/* 🔹 خیلی بزرگ */
+.btn-xl {
+  height: 48px;                                           /* ارتفاع خیلی بزرگ برای موارد برجسته */
+  padding: 0 20px;                                        /* padding متناسب با ارتفاع 48px */
+  font-size: var(--md-sys-typescale-label-large-size);    /* Label Large همچنان مناسب سایز xl */
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  font-family: var(--md-sys-typescale-label-large-font);
+}
+
+
+.btn-primary {
+  background-color: var(--md-sys-color-primary);           /* رنگ پس‌زمینه اصلی */
+  color: var(--md-sys-color-on-primary);                   /* رنگ متن روی پس‌زمینه اصلی */
+  border: none;                                            /* بدون کادر */
+  box-shadow: 0 2px 6px var(--md-sys-color-shadow);        /* سایه ملایم */
+}
+.btn-primary:hover {
+  background-color: var(--md-sys-color-primary-container); /* رنگ هاور */
+  color: var(--md-sys-color-on-primary-container);         /* رنگ متن هاور */
+  transform: translateY(-2px);                             /* کمی بالا رفتن */
+  box-shadow: 0 4px 10px var(--md-sys-color-shadow);       /* سایه بیشتر */
+}
+.btn-primary:active {
+  background-color: var(--md-sys-color-tertiary);          /* رنگ کلیک */
+  transform: scale(0.97);                                  /* کمی کوچک شدن */
+  box-shadow: 0 2px 4px var(--md-sys-color-shadow);        /* سایه کمتر */
+}
+.btn-primary:disabled {
+  background-color: var(--md-sys-color-outline-variant);   /* رنگ غیرفعال */
+  color: var(--md-sys-color-on-surface);                   /* رنگ متن غیرفعال */
+  cursor: not-allowed;                                     /* نشانگر ممنوع */
+  box-shadow: none;                                        /* بدون سایه */
+}
+ .btn-primary:focus {
+   outline: none; /* حذف outline پیش‌فرض مرورگر */
+   box-shadow: 0 0 0 3px var(--md-sys-color-primary); /* حلقه فوکوس رنگی */ 
+}
+
+.btn-secondary {
+  background-color: var(--md-sys-color-secondary);         /* رنگ پس‌زمینه ثانویه */
+  color: var(--md-sys-color-on-secondary);                 /* رنگ متن روی ثانویه */
+  border: none;
+  box-shadow: 0 2px 6px var(--md-sys-color-shadow);        /* سایه ملایم */
+} 
+/* 🖱️ حالت هاور */
+.btn-secondary:hover {
+  background-color: var(--md-sys-color-secondary-container); /* رنگ هاور ثانویه */
+  color: var(--md-sys-color-on-secondary-container);         /* رنگ متن هاور */
+  transform: translateY(-2px);                               /* کمی بالا رفتن */
+  box-shadow: 0 4px 10px var(--md-sys-color-shadow);         /* سایه بیشتر */
+}
+/* 👆 حالت کلیک (Pressed/Active) */
+.btn-secondary:active {
+  background-color: var(--md-sys-color-secondary-fixed);     /* رنگ کلیک */
+  color: var(--md-sys-color-on-secondary-fixed);             /* متن کلیک */
+  transform: scale(0.97);                                    /* کمی کوچک شدن */
+  box-shadow: 0 2px 4px var(--md-sys-color-shadow);          /* سایه کمتر */
+}
+/* 🎯 حالت فوکوس */
+.btn-secondary:focus {
+  outline: none;                                             /* حذف outline پیش‌فرض مرورگر */
+  box-shadow: 0 0 0 3px var(--md-sys-color-secondary);       /* حلقه فوکوس رنگی */
+}
+/* 🚫 حالت غیرفعال */
+.btn-secondary:disabled {
+  background-color: var(--md-sys-color-outline-variant);     /* رنگ غیرفعال */
+  color: var(--md-sys-color-on-surface);                     /* متن غیرفعال */
+  cursor: not-allowed;                                       /* نشانگر ممنوع */
+  box-shadow: none;                                          /* بدون سایه */
+  transform: none;                                           /* بدون حرکت */
+}
+
+
+.btn-tonal {
+  background-color: var(--md-sys-color-secondary-container); /* رنگ پس‌زمینه تونال */
+  color: var(--md-sys-color-on-secondary-container);         /* رنگ متن تونال */
+  border: none;
+  box-shadow: none;                                          /* بدون سایه */
+  transition: background-color 0.3s ease;                    /* تغییر نرم رنگ */
+}
+.btn-tonal:hover {
+  background-color: var(--md-sys-color-tertiary-container);  /* تغییر رنگ در حالت هاور */
+  color: var(--md-sys-color-on-tertiary-container);          /* متن مناسب هاور */
+}
+.btn-tonal:active {
+  background-color: var(--md-sys-color-secondary-fixed);     /* رنگ در حالت کلیک (pressed) */
+  color: var(--md-sys-color-on-secondary-fixed);             /* متن مناسب pressed */
+  transform: scale(0.97);                                    /* کمی کوچک شدن برای حس فشار */
+}
+.btn-tonal:focus {
+  outline: none;                                             /* حذف outline پیش‌فرض مرورگر */
+  box-shadow: 0 0 0 3px var(--md-sys-color-secondary);       /* حلقه فوکوس رنگی */
+}
+.btn-tonal:disabled {
+  background-color: var(--md-sys-color-surface-variant);     /* رنگ سطح کمرنگ برای غیرفعال */
+  color: var(--md-sys-color-on-surface);                     /* متن کمرنگ */
+  cursor: not-allowed;                                       /* نشانگر ممنوع */
+  box-shadow: none;                                          /* بدون سایه */
+}
+
+
+.btn-outlined {
+  background-color: transparent;                            /* پس‌زمینه شفاف */
+  color: var(--md-sys-color-primary);                       /* رنگ متن اصلی */
+  border: 1px solid var(--md-sys-color-outline);            /* کادر با رنگ outline */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.btn-outlined:hover {
+  background-color: var(--md-sys-color-primary-container);   /* پس‌زمینه هاور */
+  color: var(--md-sys-color-on-primary-container);           /* متن هاور */
+  border-color: var(--md-sys-color-outline-variant);         /* کادر نرم‌تر */
+}
+.btn-outlined:active {
+  background-color: var(--md-sys-color-primary-fixed);       /* رنگ کلیک */
+  color: var(--md-sys-color-on-primary-fixed);               /* متن کلیک */
+  border-color: var(--md-sys-color-primary);                 /* تاکید کادر */
+  transform: scale(0.97);                                    /* کمی کوچک شدن */
+}
+.btn-outlined:focus {
+  outline: none;                                             /* حذف outline پیش‌فرض */
+  box-shadow: 0 0 0 3px var(--md-sys-color-primary);         /* حلقه فوکوس رنگی */
+}
+.btn-outlined:disabled {
+  background-color: transparent;                             /* پس‌زمینه شفاف باقی می‌ماند */
+  color: var(--md-sys-color-on-surface);                     /* متن کمرنگ */
+  border-color: var(--md-sys-color-outline-variant);         /* کادر کمرنگ */
+  cursor: not-allowed;                                       /* نشانگر ممنوع */
+}
+
+
+.btn-text {
+  background-color: transparent;                            /* پس‌زمینه شفاف */
+  color: var(--md-sys-color-primary);                       /* رنگ متن اصلی */
+  border: none;
+  transition: background-color 0.3s ease;                   /* تغییر نرم رنگ */
+}
+
+.btn-text:hover {
+  background-color: var(--md-sys-color-primary-container);   /* رنگ هاور */
+  color: var(--md-sys-color-on-primary-container);           /* متن هاور */
+}
+.btn-text:active {
+  background-color: var(--md-sys-color-primary-fixed);       /* رنگ کلیک (pressed) */
+  color: var(--md-sys-color-on-primary-fixed);               /* متن کلیک */
+  transform: scale(0.97);                                    /* کمی کوچک شدن برای حس فشار */
+}
+.btn-text:focus {
+  outline: none;                                             /* حذف outline پیش‌فرض مرورگر */
+  box-shadow: 0 0 0 3px var(--md-sys-color-primary);         /* حلقه فوکوس رنگی */
+}
+.btn-text:disabled {
+  background-color: transparent;                             /* پس‌زمینه شفاف باقی می‌ماند */
+  color: var(--md-sys-color-on-surface);                     /* متن کمرنگ */
+  cursor: not-allowed;                                       /* نشانگر ممنوع */
+}
+
+
+.btn-elevated {
+  background-color: var(--md-sys-color-surface);            /* رنگ سطح */
+  color: var(--md-sys-color-primary);                       /* رنگ متن اصلی */
+  border: none;
+  box-shadow: 0 1px 2px var(--md-sys-color-shadow);         /* سایه خیلی ملایم */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-elevated:hover {
+  background-color: var(--md-sys-color-surface-container);   /* سطح پررنگ‌تر در هاور */
+  box-shadow: 0 2px 6px var(--md-sys-color-shadow);          /* سایه بیشتر برای شناوری */
+}
+.btn-elevated:active {
+  background-color: var(--md-sys-color-surface-container-high); /* سطح فشرده‌تر در کلیک */
+  transform: scale(0.97);                                    /* کمی کوچک شدن */
+  box-shadow: 0 1px 3px var(--md-sys-color-shadow);          /* سایه کمتر */
+}
+.btn-elevated:focus {
+  outline: none;                                             /* حذف outline پیش‌فرض مرورگر */
+  box-shadow: 0 0 0 3px var(--md-sys-color-primary);         /* حلقه فوکوس رنگی */
+}
+.btn-elevated:disabled {
+  background-color: var(--md-sys-color-surface-variant);     /* سطح کمرنگ برای غیرفعال */
+  color: var(--md-sys-color-on-surface);                     /* متن کمرنگ */
+  cursor: not-allowed;                                       /* نشانگر ممنوع */
+  box-shadow: none;                                          /* بدون سایه */
+}
+
+
+/* ◻️ دکمه چهارگوش */
+.btn-square {
+  border-radius: var(--md-sys-shape-corner-none-default-size); /* بدون گردی */
+}

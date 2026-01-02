@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" itemscope itemtype="https://schema.org/ShoppingCart">
+<head>
+  <link rel="stylesheet" href="../resources/assets/css/main.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="سبد خرید سایت معرفت">
+  <meta name="robots" content="index, follow">
+  <title>سبد خرید | معرفت</title>
+</head>
+<body>
+
+  <header>
+    <h1 class="site-title">
+      <img src="../resources/assets/images/logo.svg" alt="لوگو معرفت"> معرفت
+    </h1>
+
+    <nav class="auth-nav" aria-label="ناوبری کاربری">
+      <ul>
+        <li><a href="login.html" class="btn btn-primary btn-md">ورود</a></li>
+        <li><a href="signup.html" class="btn btn-primary btn-md">ثبت‌نام</a></li>
+        <li><a href="dashboard.html">داشبورد</a></li>
+        <li><a href="logout.html">خروج</a></li>
+      </ul>
+    </nav>
+
+    <nav class="main-nav" aria-label="ناوبری اصلی سایت">
+      <ul>
+        <li><a href="about.html">درباره معرفت</a></li>
+        <li><a href="team.html">تیم ما</a></li>
+        <li><a href="services.html">خدمات معرفت</a></li>
+        <li><a href="contact.html">تماس با معرفت</a></li>
+        <li><a href="donation.html">کمک‌های خیر</a></li>
+        <li>
+          <span class="cart-icon">
+            🛒
+            <span id="cart-badge" class="badge badge-lg">0</span>
+          </span>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main itemprop="mainContentOfPage">
+    <!-- معرفی سبد خرید -->
+    <section>
+      <div class="card card-filled">
+        <h2>سبد خرید شما</h2>
+        <p>در این بخش می‌توانید محصولات انتخاب‌شده را مشاهده و مدیریت کنید.</p>
+      </div>
+    </section>
+
+    <!-- محصولات (همان خدمات صفحه services.html) -->
+    <section>
+      <h2>محصولات موجود</h2>
+      <div class="activities-grid">
+        <div class="card card-outlined">
+          <h3>جزوه جامع پاسخ به شبهات</h3>
+          <p>جزوه برای پاسخ به شبهات.</p>
+          <div class="card-actions">
+            <button class="btn btn-primary btn-md add-to-cart">افزودن به سبد</button>
+            <button class="icon-btn heart" aria-label="افزودن به علاقه‌مندی‌ها">&#9825;</button>
+          </div>
+        </div>
+        <div class="card card-outlined">
+          <h3>ویدیو جلسات آموزشی</h3>
+          <p>کلاس‌های معارف اهل بیت و تفسیر قرآن.</p>
+          <div class="card-actions">
+            <button class="btn btn-primary btn-md add-to-cart">افزودن به سبد</button>
+            <button class="icon-btn heart" aria-label="افزودن به علاقه‌مندی‌ها">&#9825;</button>
+          </div>
+        </div>
+        <div class="card card-outlined">
+          <h3>کتاب مجموعه</h3>
+          <p>کتاب مجموعه معرفت.</p>
+          <div class="card-actions">
+            <button class="btn btn-primary btn-md add-to-cart">افزودن به سبد</button>
+            <button class="icon-btn heart" aria-label="افزودن به علاقه‌مندی‌ها">&#9825;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta">
+      <div class="card card-elevated">
+        <h2>تکمیل خرید</h2>
+        <p>پس از افزودن محصولات، می‌توانید به مرحله پرداخت بروید.</p>
+        <div class="cta-buttons">
+          <a href="" class="btn btn-primary btn-md">ادامه خرید</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 معرفت. تمامی حقوق محفوظ است.</p>
+  </footer>
+
+  <!-- دکمه شناور برو بالا -->
+  <a href="#" class="fab" aria-label="برو بالا">⬆</a>
+
+  <script src="../resources/assets/js/badge.js"></script>
+  <script src="../resources/assets/js/icon-buttons.js"></script>
+</body>
+</html>
